@@ -10911,7 +10911,7 @@ hr.divider-light {
 header.masthead {
 padding-top: 1rem;
   padding-bottom: calc(10rem - 4.5rem);
- background:url background: linear-gradient(to bottom, rgba(10, 20, 10, 0.8) 100%, rgba(10, 20, 0, 0.8))100% ("WhatsApp Image 2025-04-23 at 7.25.54 PM.jpeg");
+  background: linear-gradient(to bottom, rgba(10, 20, 10, 0.8) 100%, rgba(10, 20, 0, 0.8) 100%),("WhatsApp Image 2025-04-23 at 7.25.54 PM.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
