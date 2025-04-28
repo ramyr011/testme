@@ -32,7 +32,7 @@
   /* الترويسة - تصميم شفاف مع تأثير زجاجي */
   header {
     position: fixed;
-    padding-right: 600px;
+    padding-right: 10px;
     top: 0;
     width: 100%;
     z-index: 1000;
