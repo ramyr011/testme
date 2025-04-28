@@ -543,34 +543,5 @@ nav a {
 body.dark-mode nav a {
   color: #bbb;
 }
-/* تصميم متجاوب للموبايل */
-@media (max-width: 768px) {
-  .header {
-    padding: 10px;
-  }
 
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
 
-  nav a {
-    font-size: 16px;
-  }
-
-  .products {
-    padding: 10px;
-  }
-
-  .product-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-card {
-    width: 90%;
-  }
-}
