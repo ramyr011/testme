@@ -1,0 +1,558 @@
+/* ملف style.css - تصميم عصري ومبتكر */
+
+/* المتغيرات العامة */
+:root {
+    --primary: #e3ceff; /* لون أرجواني مميز */
+    --secondary: #00ffcc; /* لون فسفوري حديث */
+    --dark: #0a0a1a; /* خلفية داكنة */
+    --light: #f0f0ff; /* نص فاتح */
+    --accent: #ff3e80; /* لون مميز للتفاعلات */
+    --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    --font-main: 'Tajawal', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+  }
+  
+  /* إعدادات أساسية */
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Poppins:wght@600;800&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body.dark-mode{
+    font-family: var(--font-main);
+    background-color: var(--dark);
+    color: var(--light);
+    direction: rtl;
+    overflow-x: hidden;
+  }
+  
+  /* الترويسة - تصميم شفاف مع تأثير زجاجي */
+  header {
+    position: fixed;
+    padding-right: 10px;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(10, 10, 26, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  .back-link {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .back-link:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 62, 128, 0.4);
+  }
+  
+  /* شريط التنقل - تصميم دائري مميز */
+  nav {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    background: rgba(10, 10, 26, 0.7);
+    padding: 1rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+  
+  .nav-link {
+    color: var(--light);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    background: rgba(110, 0, 255, 0.2);
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    background: var(--gradient);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(110, 0, 255, 0.5);
+  }
+  
+  /* قسم المنتجات - تصميم كروي ثلاثي الأبعاد */
+  #products {
+    padding: 3rem 1rem 3rem;
+    min-height: 100vh;
+  }
+
+  #products h2 {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: var(--gradient);
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    perspective: 1000px;
+  }
+  
+  .product {
+    padding: 2rem;
+
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .product:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .product::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(110,0,255,0.1) 0%, rgba(0,0,0,0) 70%);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+  }
+  
+  .product:hover::before {
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+  
+  .product img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: all 0.5s ease;
+  }
+  
+  .product:hover img {
+    transform: scale(1.05) rotate(2deg);
+    filter: drop-shadow(0 15px 30px rgba(0, 255, 204, 0.3));
+  }
+  
+  .me p {
+    padding-left: px;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary);
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+  }
+  
+  /* زر الواتساب - تصميم عائم متحرك */
+  .whatsapp-button {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 2rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .whatsapp-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+  }
+  
+  .whatsapp-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+    animation: none;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* قسم الموقع الجغرافي - تصميم زجاجي */
+  .page-section {
+    padding: 6rem 2rem;
+    background: rgba(10, 10, 26, 0.7);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-5 {
+    margin-bottom: 1rem;
+  }
+  
+  .map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    filter: grayscale(30%) contrast(120%);
+    transition: all 0.5s ease;
+  }
+  
+  .map-container:hover iframe {
+    filter: grayscale(0%) contrast(100%);
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  
+  .col-md-4 {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .col-md-4:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .col-md-4 h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+  }
+  
+  .col-md-4 p {
+    color: var(--light);
+    line-height: 1.8;
+  }
+  
+  /* تأثيرات خاصة للعناوين */
+  h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--gradient);
+    margin: 1rem auto;
+    border-radius: 3px;
+  }
+  
+  /* التجاوب مع أحجام الشاشات */
+  @media (max-width: 768px) {
+    #products {
+      padding: 6rem 1rem 4rem;
+    }
+    
+    .product-list {
+      grid-template-columns: 1fr;
+    }
+    
+    nav {
+      bottom: 1rem;
+      padding: 0.5rem;
+    }
+    
+    .nav-link {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .map-container iframe {
+      height: 300px;
+    }
+  }
+  
+  /* شريط التمرير المخصص */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--dark);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+
+
+  .nav-link:hover, .nav-link.active {
+    background: var(--gradient);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(110, 0, 255, 0.5);
+  }
+
+  /* تحديثات CSS للتصميم الجديد */
+
+/* جعل قسم المنتجات الرئيسي أكثر اتساعًا */
+#products {
+    padding: 8rem 2rem 6rem;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* تصميم المنتج الرئيسي الكبير */
+  .main-featured {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  
+  .main-featured .product {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .main-featured img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .main-featured img:hover {
+    transform: scale(1.05);
+  }
+  
+  .main-featured p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--secondary);
+  }
+  
+  /* زر الواتساب تحت المنتج الرئيسي */
+  .main-featured .whatsapp-button {
+    margin: 2rem auto;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+  }
+  
+  /* شبكة المنتجات الجانبية */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .products-grid .product {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .products-grid .product:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .products-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+  
+  .products-grid p {
+    font-size: 1.1rem;
+  
+  }
+  
+  /* التعديلات للجوال */
+  @media (max-width: 768px) {
+    .main-featured img {
+      max-height: 300px;
+    }
+    
+    .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+ /* شكل السويتش */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-right: 15px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+/* الوضع الافتراضي Light Mode */
+body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+
+body.dark-mode .header {
+  background-color: #1a1a1a;
+}
+
+/* الفوتر */
+.footer {
+  background-color: #0077b6;
+}
+
+body.dark-mode .footer {
+  background-color: #1a1a1a;
+}
+
+/* البطاقات */
+.product-card {
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+}
+
+body.dark-mode .product-card {
+  background-color: #1e1e1e;
+  border: 2px solid #555;
+}
+
+/* روابط الناف بار */
+nav a {
+  color: #fff;
+}
+
+body.dark-mode nav a {
+  color: #bbb;
+}
+
+
+    .product-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-family: Arial, sans-serif;
+      margin: 10px 0;
+    }
+  
+    .whatsapp-button {
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+  
+    .whatsapp-button:hover {
+      background-color: #1DA851;
+    }
